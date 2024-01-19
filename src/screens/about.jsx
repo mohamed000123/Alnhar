@@ -28,7 +28,6 @@ const About = () => {
   };
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.heading}>about us</Text>
       <Image source={require('../assets/logo.png')} style={styles.logo} />
       <Text style={{padding: 7}}>
         ALNAHARALJADID satellite channel A diverse Gulf Arab channel that began
