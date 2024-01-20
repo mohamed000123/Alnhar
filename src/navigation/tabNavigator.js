@@ -1,5 +1,6 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Image} from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 //
 import About from '../screens/about';
 import StackScreens from './stackNavigator';
@@ -9,16 +10,13 @@ function MainTabs() {
   return (
     <Tab.Navigator>
       <Tab.Screen
-        name="home"
+        name="home-sharp"
         component={StackScreens}
         options={{
           headerShown: false,
           tabBarLabel: 'Home',
-          tabBarIcon: ({focused, color, size}) => (
-            <Image
-              source={require('../assets/home_icon.png')}
-              style={{width: size, height: size, tintColor: color}}
-            />
+          tabBarIcon: ({color, size}) => (
+            <Ionicons name="home" color={color} size={size} />
           ),
         }}
       />
@@ -28,10 +26,11 @@ function MainTabs() {
         options={{
           headerShown: false,
           tabBarLabel: 'About',
-          tabBarIcon: ({focused, color, size}) => (
-            <Image
-              source={require('../assets/about_icon.png')} // Replace with your image path
-              style={{width: size, height: size, tintColor: color}}
+          tabBarIcon: ({color, size}) => (
+            <Ionicons
+              name="information-circle-sharp"
+              color={color}
+              size={size}
             />
           ),
         }}
