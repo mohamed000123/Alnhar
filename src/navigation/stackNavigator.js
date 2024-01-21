@@ -1,7 +1,7 @@
 import {createStackNavigator} from '@react-navigation/stack';
 //
 import Splash from '../screens/splash';
-import Home from '../screens/home';
+import MainTabs from './tabNavigator';
 const Stack = createStackNavigator();
 
 export default function StackScreens() {
@@ -14,8 +14,8 @@ export default function StackScreens() {
       />
       <Stack.Screen
         options={{headerShown: false}}
-        name="Home"
-        component={Home}
+        name="MainTabs"
+        component={MainTabs}
       />
     </Stack.Navigator>
   );

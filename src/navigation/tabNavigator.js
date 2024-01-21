@@ -1,9 +1,8 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Image} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 //
 import About from '../screens/about';
-import StackScreens from './stackNavigator';
+import Home from '../screens/home';
 const Tab = createBottomTabNavigator();
 
 function MainTabs() {
@@ -11,7 +10,7 @@ function MainTabs() {
     <Tab.Navigator>
       <Tab.Screen
         name="home-sharp"
-        component={StackScreens}
+        component={Home}
         options={{
           headerShown: false,
           tabBarLabel: 'Home',
