@@ -45,7 +45,7 @@ const About = () => {
           ...styles.title,
           padding: phoneOrientation == 'PORTRAIT' ? '8%' : '3%',
         }}>
-        About Alnhar Aljaded
+        About ALNAHARALJADID
       </Text>
       <Image source={require('../assets/logo.png')} style={styles.logo} />
       <Text style={{padding: 10, marginTop: 17}}>
