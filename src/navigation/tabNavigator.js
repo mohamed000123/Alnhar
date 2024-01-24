@@ -1,13 +1,29 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {useEffect, useState} from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Orientation from 'react-native-orientation-locker';
 //
 import About from '../screens/about';
 import Home from '../screens/home';
 const Tab = createBottomTabNavigator();
 
 function MainTabs() {
+  const [currentOrientation, setCurrentOrientation] = useState('PORTRAIT');
+  useEffect(() => {
+    Orientation.addOrientationListener(orientation => {
+      setCurrentOrientation(orientation);
+      return () => {
+        Orientation.removeOrientationListener(handleOrientationChange);
+      };
+    });
+  });
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={{
+        tabBarStyle: {
+          display: currentOrientation == 'PORTRAIT' ? 'block' : 'none',
+        },
+      }}>
       <Tab.Screen
         name="home-sharp"
         component={Home}
